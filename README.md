@@ -113,29 +113,20 @@ yolo task=detect mode=train \
 *   `patience=50`: **核心优化**。如果在连续50轮内，验证集性能没有提升，训练将自动停止。
 *   训练结果将保存在 `/workspace/proj_shi/runs/detect/emotion_recognition_optimized/`。
 *   我们的项目中实际使用的是 `train2` 文件夹，您可以将 `name` 参数修改为 `train2` 来复现。
+
+
+
+## 5. 课内功能实现和图像风格迁移项目
+
+### 4.1. 下载项目代码
+
+本项目直接使用开源实现。首先，需要将该项目克隆到您的 `final_project` 目录下。
+> **来源**: [gordicaleksa/pytorch-neural-style-transfer on GitHub](https://github.com/gordicaleksa/pytorch-neural-style-transfer)
+
+```bash
+# 进入总项目目录
+cd /workspace/proj_shi/final_project/
+# 克隆仓库
+git clone https://github.com/gordicaleksa/pytorch-neural-style-transfer.git
 ```
-
-
-ui设计和结构：
-/workspace/proj_shi/
-|
-├── runs/
-│   └── detect/
-│       ├── train/      # 吸烟检测的训练结果
-│       │   └── weights/
-│       │       └── best.pt  <-- (被 smoking_ui/app.py 调用)
-│       │
-│       └── train2/     # 表情识别的训练结果
-│           └── weights/
-│               └── best_smoke.pt  <-- (被 emotion_ui/app.py 调用)
-│
-├── smoking_ui/
-│   └── app_smoke.py        # 吸烟检测UI的启动脚本
-│
-└── emotion_ui/
-    └── app.py        # 表情识别UI的启动脚本
-    
-表情识别和抽烟检测的ui和模型按照此结构放入项目中
-
-
 
