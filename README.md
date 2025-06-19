@@ -1,3 +1,5 @@
+
+```markdown
 # YOLOv8 抽烟与表情识别模型训练指南
 
 本文档详细介绍了如何训练本项目中使用的**抽烟检测**和**表情识别**模型。
@@ -6,7 +8,7 @@
 
 在开始训练之前，请确保您的项目目录拥有以下结构。如果目录或文件不存在，请手动创建。
 
-
+```
 /workspace/proj_shi/
 |
 ├── datasets/             # 用于存放所有原始数据集的目录
@@ -18,7 +20,7 @@
 |
 └── yolov8_weights/       # 存放下载的YOLOv8预训练权重
     └── yolov8s.pt        # 示例：s模型的权重文件
-
+```
 
 ## 2. 下载 YOLOv8 预训练权重
 
@@ -29,13 +31,13 @@ YOLOv8 提供了多种尺寸的预训练模型（如 n, s, m, l, x）。我们�
 最简单的方式是直接在您的终端运行 `yolo` 命令。如果您本地没有对应的权重文件，YOLOv8 会**自动下载**。
 
 例如，运行一个简单的预测命令即可触发下载：
-
+```bash
 # 确保已进入 yolov8_weights 目录，这样下载的文件会保存在这里
 cd /workspace/proj_shi/yolov8_weights
 
 # 运行一个任意的预测任务，YOLO会自动检查并下载 yolov8s.pt
 yolo predict model=yolov8s.pt source='https://ultralytics.com/images/bus.jpg'
-
+```
 命令执行后，`yolov8s.pt` 文件就会出现在 `yolov8_weights` 目录下。
 
 ### 方式二：手动下载
@@ -82,11 +84,11 @@ yolo predict model=yolov8s.pt source='https://ultralytics.com/images/bus.jpg'
 
 ### 训练吸烟检测模型
 
-该模型我们使用 `yolov8s.pt`进行训练，并设定了100个轮次。
+该模型我们使用 `yolov8n.pt`（一个更小的模型）进行训练，并设定了100个轮次。
 
 ```bash
 yolo task=detect mode=train \
-  model=/workspace/proj_shi/yolov8_weights/yolov8s.pt \
+  model=/workspace/proj_shi/yolov8_weights/yolov8n.pt \
   data=/workspace/proj_shi/datasets/smoking_dataset/data.yaml \
   epochs=100 \
   imgsz=640 \
@@ -112,6 +114,8 @@ yolo task=detect mode=train \
 *   `patience=50`: **核心优化**。如果在连续50轮内，验证集性能没有提升，训练将自动停止。
 *   训练结果将保存在 `/workspace/proj_shi/runs/detect/emotion_recognition_optimized/`。
 *   我们的项目中实际使用的是 `train2` 文件夹，您可以将 `name` 参数修改为 `train2` 来复现。
+```
+
 
 ui设计和结构：
 /workspace/proj_shi/
