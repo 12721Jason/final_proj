@@ -1,22 +1,37 @@
-# Common dependencies for all projects
+# Core dependencies
 numpy==1.26.0
 opencv-python==4.10.0.84
 torch==2.1.0
 torchvision==0.16.0
 Pillow==10.4.0
 
-# Dependencies for YOLOv8 training and UI
-# ultralytics already includes many of these, but specifying is good practice
+# YOLOv8 and computer vision
 ultralytics==8.2.102
 
-# Dependencies for Gradio Web UIs
+# Web interface
 gradio==5.34.0
 
-# Dependencies for ONNX conversion (optional but good to have)
+# ONNX conversion and inference
 onnx==1.18.0
 onnxruntime==1.22.0
 onnxruntime-gpu==1.20.1
 
-# Dependencies for PyTorch Neural Style Transfer project
+# Visualization and plotting
 matplotlib==3.8.1
+seaborn==0.13.2
 
+# Utilities and file handling
+PyYAML==6.0.1
+requests==2.31.0
+scipy==1.13.0
+tqdm==4.66.2
+pandas==2.2.1
+
+# Development tools
+tensorboard==2.16.2
+thop==0.1.1.post2209072238
+
+# GUI dependencies (optional)
+qimage2ndarray==1.10.0
+PyQt5==5.15.10
+PyQt5-Qt5==5.15.2
