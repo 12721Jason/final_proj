@@ -118,11 +118,41 @@ yolo task=detect mode=train \
 
 ## 5. 课内功能实现和图像风格迁移项目
 
-### 4.1. 下载项目代码
+### 5.1. 下载项目代码
 
 本项目直接使用开源实现。首先，需要将该项目克隆到您的 `final_project` 目录下。
 > **来源**: [gordicaleksa/pytorch-neural-style-transfer on GitHub](https://github.com/gordicaleksa/pytorch-neural-style-transfer)
 
+课内功能部分进入Final_project执行
+```
+/Final_project [YOLOv8-main]
+│
+├── pytorch-neural-style-transfer/     # 神经风格迁移模块
+│   ├── content-images/                # 内容图像目录
+│   ├── models/                        # 保存模型目录
+│   ├── style-images/                  # 风格图像目录
+│   ├── utils/                         # 工具函数
+│   │   ├── __init__.py
+│   │   ├── neural_style_transfer.py  # 风格迁移主函数
+│   │   └── reconstruct_image_from_representation.py
+│   └── README.md                      # 风格迁移模块说明文档，从github上下载并进行优化的模型
+│
+├── styletransfer_output/             # 风格迁移结果输出目录
+│
+├── ui/                               
+│   └── myWindow.ui                   # PyQt5 界面设计文件
+│
+└── ultralytics/                      # YOLOv8推理模块与界面整合
+    ├── convert.py                    # 格式转换（pt模型转ONNX模型）
+    ├── example.jpg                   # 示例图像1
+    ├── example2.png                  # 示例图像2
+    ├── infer.py                      # 推理逻辑
+    ├── main.py                       # 主运行入口
+    ├── myWindow.py                   # PyQt5 主窗口逻辑
+    ├── noise.png                     # 有噪声示例图像
+    └── op.png                        # 运算模板图像
+               
+```
 ```bash
 # 进入总项目目录
 cd /workspace/proj_shi/final_project/
