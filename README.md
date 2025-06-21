@@ -142,16 +142,29 @@ yolo task=detect mode=train \
 ├── ui/                               
 │   └── myWindow.ui                   # PyQt5 界面设计文件
 │
-└── ultralytics/                      # YOLOv8推理模块与界面整合
-    ├── convert.py                    # 格式转换（pt模型转ONNX模型）
-    ├── example.jpg                   # 示例图像1
-    ├── example2.png                  # 示例图像2
-    ├── infer.py                      # 推理逻辑
-    ├── main.py                       # 主运行入口
-    ├── myWindow.py                   # PyQt5 主窗口逻辑
-    ├── noise.png                     # 有噪声示例图像
-    └── op.png                        # 运算模板图像
-               
+├── ultralytics/                      # YOLOv8推理模块与界面整合
+│   ├── assets/               
+│   ├── datasets/               # 要将数据集的yaml文件放入其中，指示响应数据级的位置
+│   ├── hub/                  
+│   ├── models/ 
+│   ├── tracker/
+│   ├── yolo/
+│   └── nn/
+│──convert.py                    # 格式转换（pt模型转ONNX模型）
+├── example.jpg                   # 示例图像1
+├── example2.png                  # 示例图像2
+├── infer.py                      # 推理逻辑
+├── main.py                       # 主运行入口
+├── myWindow.py                   # PyQt5 主窗口逻辑
+├── noise.png                     # 有噪声示例图像
+├── app.py                        # 表情识别主函数
+├── app_smoke.py                  # 抽烟检测主函数
+├── yolov8s.pt                    # 未训练模型
+├── yolov8s.onnx               
+├── best.py                       # 表情识别模型 
+├── app_smoke.py                  # 抽烟检测模型
+├── op.png                        # 运算模板图像
+└── nn/              
 ```
 ```bash
 # 进入总项目目录
