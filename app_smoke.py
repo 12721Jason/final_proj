@@ -3,7 +3,9 @@ from ultralytics import YOLO
 import os
 
 # 加载模型
-model = YOLO("/workspace/proj_shi/runs/detect/train3/weights/best_smoke.pt")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(script_dir, "best_smoke.pt")
+model = YOLO(model_path)
 
 def detect_smoking(image):
     # 预测并保存结果
