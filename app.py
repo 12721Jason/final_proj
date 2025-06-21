@@ -5,7 +5,9 @@ import cv2
 import numpy as np
 
 # 加载模型
-model = YOLO("/workspace/proj_shi/runs/detect/train2/weights/best.pt")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(script_dir, "best.pt")
+model = YOLO(model_path)
 print("Model loaded with classes:", model.names)
 
 def detect_emotion(image):
